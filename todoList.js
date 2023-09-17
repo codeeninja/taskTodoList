@@ -1,9 +1,15 @@
-// app.js
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
+const cors = require('cors');
+
+
+
+// Enable CORS for all routes
+app.use(cors());
+
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -52,7 +58,8 @@ app.post('/auth/login', (req, res) => {
         const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (passwordMatch) {
-          res.status(200).json({ message: 'Login successful' });
+          res.status(200).json({ message: 'Login successful', id: user.id });
+
         } else {
           res.status(401).json({ error: 'Authentication failed' });
         }
@@ -63,7 +70,7 @@ app.post('/auth/login', (req, res) => {
 
 
 // Create Task by userId
-app.post('/create/task/:userId',function(req,resp){
+app.post('/create/tasks/:userId',function(req,resp){
     const userId=req.params.userId;
     const {description,status,dueDate}=req.body;
     const sql='insert into tasks(description,status,dueDate,userId) values (?,?,?,?) ';
@@ -108,6 +115,7 @@ app.put('/update/tasks/:id', (req, resp) => {
 // Delete Task userId
 app.delete('/delete/tasks/:id', (req, resp) => {
     const taskId=req.params.id;
+    console.log("Received request to delete task with ID:", taskId);
     const sql="delete from tasks where id=?";
     db.query(sql,[taskId],function(err,result){
         if(err){
