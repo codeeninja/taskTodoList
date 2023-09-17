@@ -1,0 +1,32 @@
+[
+{"type":"header","version":"4.7.4","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"mydb"},
+{"type":"table","name":"tasks","database":"mydb","data":
+[
+{"id":"1","description":"task 1 for user 1","status":"1","dueDate":"2023-09-23","userId":"1"},
+{"id":"2","description":"task 1 for user 2","status":"0","dueDate":"2023-09-20","userId":"2"},
+{"id":"3","description":"task 2 for user 1","status":"0","dueDate":"2023-09-23","userId":"1"},
+{"id":"4","description":"task 2 for user 2","status":"0","dueDate":"2023-09-23","userId":"2"},
+{"id":"9","description":"task 1 for user 5","status":"0","dueDate":"2023-09-23","userId":"5"},
+{"id":"12","description":"task 3 for user 7","status":"1","dueDate":"2023-09-22","userId":"7"},
+{"id":"13","description":"task 4 for user 7","status":"0","dueDate":"2023-09-19","userId":"7"},
+{"id":"14","description":"task 5 for user 7","status":"1","dueDate":"2023-09-23","userId":"7"},
+{"id":"18","description":"new task in new component ","status":"0","dueDate":"2023-09-21","userId":"7"},
+{"id":"22","description":"task 1 for user 8","status":"0","dueDate":"2023-09-23","userId":"8"},
+{"id":"23","description":"task 2 for user 8","status":"1","dueDate":"2023-09-23","userId":"8"},
+{"id":"24","description":"task 3 for user 8","status":"1","dueDate":"2023-09-20","userId":"8"},
+{"id":"26","description":"shivam ","status":"9","dueDate":"2023-09-21","userId":"7"}
+]
+}
+,{"type":"table","name":"users","database":"mydb","data":
+[
+{"id":"1","username":"user1","password":"hashed_password_1"},
+{"id":"2","username":"user2","password":"hashed_password_2"},
+{"id":"3","username":"user3","password":"hashed_password_3"},
+{"id":"4","username":"shivam23","password":"$2b$10$s7cgLiuFFYw\/HdyR8P85XOpHoH6nr4Zu58wNmVC0tn3rDkXYEjP5q"},
+{"id":"5","username":"don","password":"$2b$10$OFXJJpQOr4Emv2wWjb4ETuRZ4tToOWKlvzdgxyqyBjdsuxYMnEwv."},
+{"id":"7","username":"shivam1123","password":"$2b$10$fkpf9NSnbUssoyfMV85QaO.CFHHln5AQxgIB5tocJzhXG\/Kz90DRa"},
+{"id":"8","username":"shivam2311","password":"$2b$10$i3nEZzaCOg27QVxVA3WKWu852jH.Njnfbu\/giF\/IKcZagVt06uHui"}
+]
+}
+]
